@@ -296,9 +296,9 @@ h3 {
 .split-title {
   display: grid;
   margin: 0;
-  width: min(920px, 100%);
-  font-size: clamp(4.2rem, 9vw, 8.2rem);
-  line-height: 0.86;
+  width: min(780px, 100%);
+  font-size: clamp(3.35rem, 7.2vw, 6.45rem);
+  line-height: 0.9;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -460,8 +460,8 @@ h3 {
 
 h2 {
   margin: 0;
-  font-size: clamp(2.7rem, 7vw, 7.8rem);
-  line-height: 0.92;
+  font-size: clamp(2.35rem, 5.8vw, 6.15rem);
+  line-height: 0.96;
   letter-spacing: 0;
 }
 
@@ -942,8 +942,8 @@ details p {
   }
 
   .split-title {
-    font-size: clamp(3.9rem, 18vw, 5.2rem);
-    line-height: 0.83;
+    font-size: clamp(3rem, 14vw, 4.3rem);
+    line-height: 0.9;
   }
 
   .split-title span:nth-child(2),
@@ -970,7 +970,7 @@ details p {
   }
 
   h2 {
-    font-size: clamp(2.55rem, 14vw, 4.2rem);
+    font-size: clamp(2.2rem, 11vw, 3.45rem);
   }
 
   .insight-stack,
