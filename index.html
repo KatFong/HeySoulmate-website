@@ -132,6 +132,15 @@ header.hero{position:relative;overflow:hidden;color:#fff;background:linear-gradi
 .btn-pink{background:linear-gradient(135deg,var(--pink-soft),var(--pink));color:#fff;box-shadow:0 12px 30px rgba(240,130,150,.4)}
 .btn-pink:hover{transform:translateY(-2px)}
 @media (max-width:880px){.event-hero{grid-template-columns:1fr;padding:30px}}
+.recap-grid{margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.recap-grid img{border-radius:22px;box-shadow:var(--shadow);aspect-ratio:1;object-fit:cover;width:100%}
+@media (max-width:640px){.recap-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}
+.next-event{margin-top:26px;background:#fff;border-radius:999px;box-shadow:var(--shadow);padding:16px 18px 16px 30px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.next-event .ne-tag{flex:none;font-size:12.5px;letter-spacing:.22em;font-weight:700;color:var(--pink)}
+.next-event .ne-info{flex:1;min-width:240px;font-size:14.5px;color:var(--ink-soft)}
+.next-event .ne-info b{color:var(--ink);font-size:16px}
+.next-event .btn{padding:12px 26px;font-size:14px}
+@media (max-width:760px){.next-event{border-radius:28px}}
 .exp-grid{margin-top:26px;display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 .exp{background:#fff;border-radius:26px;padding:38px 34px;box-shadow:var(--shadow);display:flex;flex-direction:column}
 .exp .exp-img{width:calc(100% + 68px);margin:-38px -34px 24px;border-radius:26px 26px 0 0;aspect-ratio:5/3;object-fit:cover}
@@ -326,19 +335,33 @@ footer{background:var(--peri-dark);color:rgba(255,255,255,.85);padding:64px 0 40
     <p class="sec-lead">無論你想先安靜咁了解自己，定係已經準備好去認識新嘅人，都有一個位留畀你。</p>
 
     <div class="event-hero">
-      <img src="assets/soul-night-poster.png" alt="靈魂之夜活動海報：廣東歌＋愛情五味，維港夜景晚宴">
+      <img src="assets/masked-poster.png" alt="蒙面交友 · 遇見靈魂活動海報：兩隻小精靈戴住面具，中間有發光心心，佐敦逸東酒店">
       <div>
-        <span class="tag">FEATURED · 7 月 10 日</span>
-        <h3>靈魂之夜</h3>
-        <p class="sub">廣東歌 ＋ 愛情五味 —— 喺歌聲同情感之間，感受愛嘅五種滋味。</p>
+        <span class="tag">精彩回顧 · 2026.5.24</span>
+        <h3>100 人蒙面約會</h3>
+        <p class="sub">一場蒙面約會，一次深度交流——蒙上面具，卸下標籤，喺安全嘅空間裡，遇見真誠嘅靈魂。</p>
         <ul>
-          <li>經典廣東歌 × 深度對話時光</li>
-          <li>銅鑼灣海景私房晚宴 · 浪漫留影時刻</li>
-          <li>2026.7.10（五）19:00 – 22:30 · 情侶、朋友、自組二人</li>
+          <li>佐敦逸東酒店 EATON HK · 100 位參加者</li>
+          <li>蒙面遊戲 × 深度交流 × 找到共鳴</li>
+          <li>圓滿結束 · 多謝每一個真誠嘅你</li>
         </ul>
-        <p class="price">HK$880<small>／位 · 連晚宴</small></p>
-        <div style="margin-top:20px"><a class="btn btn-pink" href="https://www.instagram.com/heysoulmate.hk" target="_blank" rel="noopener">立即報名</a></div>
+        <p class="price">100 人<small>滿座完場 ✦</small></p>
+        <div style="margin-top:20px"><a class="btn btn-pink" href="https://www.instagram.com/heysoulmate.hk" target="_blank" rel="noopener">去 IG 睇精彩回顧</a></div>
       </div>
+    </div>
+
+    <div class="recap-grid">
+      <img src="assets/recap-1.png" alt="回顧：蒙面小精靈喺酒店宴會廳開心咁交流">
+      <img src="assets/recap-2.png" alt="回顧：兩隻蒙面小精靈喺燭光下深度對話">
+      <img src="assets/recap-3.png" alt="回顧：一班蒙面小精靈圍埋玩對話卡遊戲">
+    </div>
+
+    <div class="next-event">
+      <span class="ne-tag">下一場 ✦</span>
+      <div class="ne-info">
+        <b>靈魂之夜</b> — 廣東歌＋愛情五味 · 2026.7.10（五）19:00–22:30 · 銅鑼灣海景私房晚宴 · HK$880／位
+      </div>
+      <a class="btn btn-pink" href="https://www.instagram.com/heysoulmate.hk" target="_blank" rel="noopener">立即報名</a>
     </div>
 
     <div class="exp-grid">
