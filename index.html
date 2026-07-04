@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hey soulmate｜靈魂交友，從懂你開始</title>
+<meta name="description" content="hey soulmate 用心理學、MBTI 同愛之語，陪你喺香港慢慢搞清楚自己想要點樣嘅愛情。靈魂測驗、深度晚宴、一對一戀愛心理陪伴。Soulful connections, beyond appearances.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --peri:#A8A6E2;        /* 品牌粉紫 */
+  --peri-deep:#8B88D8;
+  --peri-dark:#6B67B8;
+  --peri-light:#C9C7F0;
+  --peri-pale:#EEEDFA;
+  --ink:#4A4680;         /* 深紫墨 */
+  --ink-soft:#8A87B4;
+  --cream:#FBF7EF;
+  --star:#F6EDD8;
+  --pink:#F08296;
+  --pink-soft:#F7B8C4;
+  --sans:'Noto Sans TC',sans-serif;
+  --latin:'Baloo 2',cursive;
+  --shadow:0 18px 44px rgba(107,103,184,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:400;color:var(--ink);background:var(--cream);line-height:1.9;letter-spacing:.02em}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px;border-radius:6px}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;letter-spacing:.28em;color:var(--peri-deep);font-weight:700}
+.eyebrow::before{content:"✦";font-size:12px;color:var(--pink-soft)}
+h2.sec-title{font-weight:900;font-size:clamp(27px,4vw,42px);line-height:1.5;letter-spacing:.05em;margin:14px 0 12px}
+.sec-lead{max-width:640px;color:var(--ink-soft);font-size:16px}
+.en{font-family:var(--latin);letter-spacing:.01em}
+.sec{padding:104px 0}
+
+/* ---------- Nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);background:rgba(251,247,239,.8);border-bottom:1px solid rgba(168,166,226,.25)}
+.nav-inner{max-width:1120px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo img{height:46px;width:46px;border-radius:12px}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-logo .name{font-family:var(--latin);font-weight:700;font-size:21px;color:var(--peri-dark)}
+.nav-links{display:flex;gap:30px;align-items:center;font-size:14.5px;font-weight:500;color:var(--ink)}
+.nav-links a:hover{color:var(--peri-deep)}
+.nav-cta{background:var(--peri);color:#fff!important;padding:9px 22px;border-radius:999px;font-weight:700;box-shadow:0 6px 18px rgba(139,136,216,.35);transition:transform .25s,background .25s}
+.nav-cta:hover{background:var(--peri-deep);transform:translateY(-1px)}
+@media (max-width:800px){.nav-links a:not(.nav-cta){display:none}}
+
+/* ---------- Hero ---------- */
+header.hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(175deg,#B7B5EC 0%,#A8A6E2 55%,#9593E0 100%);padding:150px 0 0}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-bottom:110px}
+.hero-logo{width:min(360px,70vw);filter:drop-shadow(0 24px 40px rgba(74,70,128,.28));border-radius:32px;margin-bottom:34px}
+.hero h1{font-weight:900;font-size:clamp(30px,4.6vw,50px);line-height:1.55;letter-spacing:.06em;margin-bottom:16px}
+.hero-sub{color:rgba(255,255,255,.88);max-width:470px;font-size:16.5px;font-weight:400}
+.hero-en{font-family:var(--latin);font-weight:600;font-size:15px;color:var(--star);letter-spacing:.12em;margin-top:10px}
+.hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+.btn{display:inline-block;padding:15px 34px;border-radius:999px;font-size:15.5px;font-weight:700;letter-spacing:.08em;transition:transform .25s,box-shadow .25s,background .25s}
+.btn-white{background:#fff;color:var(--peri-dark);box-shadow:0 12px 30px rgba(74,70,128,.25)}
+.btn-white:hover{transform:translateY(-2px)}
+.btn-line{border:2px solid rgba(255,255,255,.75);color:#fff}
+.btn-line:hover{background:rgba(255,255,255,.15)}
+.hero-visual{position:relative}
+.hero-visual img{border-radius:28px;box-shadow:0 30px 60px rgba(74,70,128,.35);transform:rotate(2deg)}
+.hero-visual::after{content:"靈魂匹配中…";position:absolute;top:-18px;left:-10px;background:#fff;color:var(--peri-dark);font-size:13px;font-weight:700;letter-spacing:.1em;padding:8px 18px;border-radius:999px;box-shadow:var(--shadow);transform:rotate(-4deg)}
+.stars{position:absolute;inset:0;pointer-events:none}
+.stars span{position:absolute;color:var(--star);animation:twinkle 3.4s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.35;transform:scale(.85)}50%{opacity:1;transform:scale(1.1)}}
+.hero-wave{display:block;width:100%;margin-top:-2px}
+@media (max-width:880px){.hero-grid{grid-template-columns:1fr;gap:56px}.hero{padding-top:120px}}
+@media (prefers-reduced-motion:reduce){.stars span{animation:none}html{scroll-behavior:auto}}
+
+/* ---------- 心聲 ---------- */
+.confessions{margin-top:56px;display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.confession{background:#fff;border-radius:26px;padding:34px 32px;box-shadow:var(--shadow);position:relative}
+.confession .qmark{font-family:var(--latin);font-size:44px;line-height:1;color:var(--peri-light);position:absolute;top:20px;right:26px;font-weight:700}
+.confession h3{font-weight:900;font-size:19.5px;letter-spacing:.04em;line-height:1.6;margin-bottom:8px;color:var(--peri-dark)}
+.confession p{color:var(--ink-soft);font-size:15px}
+.confession.wide{grid-column:1/-1;background:linear-gradient(135deg,#fff, var(--peri-pale))}
+@media (max-width:760px){.confessions{grid-template-columns:1fr}}
+.confess-outro{margin-top:48px;font-weight:900;font-size:clamp(19px,2.6vw,25px);letter-spacing:.05em;line-height:1.9}
+.confess-outro .pink{color:var(--pink)}
+
+/* ---------- 方法 ---------- */
+.sec-lens{background:linear-gradient(180deg,var(--cream), var(--peri-pale))}
+.lens-grid{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.lens{background:#fff;border-radius:24px;padding:34px 26px;box-shadow:var(--shadow);transition:transform .3s}
+.lens:hover{transform:translateY(-6px)}
+.lens .glyph{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px}
+.lens .en-label{font-family:var(--latin);font-weight:600;font-size:13.5px;color:var(--peri-deep);letter-spacing:.04em}
+.lens h3{font-weight:900;font-size:18.5px;letter-spacing:.05em;margin:4px 0 10px}
+.lens p{color:var(--ink-soft);font-size:14px;line-height:1.85}
+@media (max-width:960px){.lens-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.lens-grid{grid-template-columns:1fr}}
+.works{margin-top:54px;display:grid;grid-template-columns:1.35fr 1fr;gap:22px}
+.work{border-radius:26px;overflow:hidden;box-shadow:var(--shadow);position:relative;background:#fff}
+.work img{width:100%;height:100%;object-fit:cover}
+.work .cap{position:absolute;left:18px;bottom:16px;background:rgba(255,255,255,.92);color:var(--peri-dark);font-size:13px;font-weight:700;letter-spacing:.08em;padding:7px 16px;border-radius:999px}
+@media (max-width:760px){.works{grid-template-columns:1fr}}
+
+/* ---------- 公仔 ---------- */
+.sec-ip{background:var(--peri-pale)}
+.ip-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;margin-top:10px}
+.ip-frame{background:#fff;padding:16px 16px 20px;border-radius:24px;box-shadow:var(--shadow);transform:rotate(-1.2deg)}
+.ip-frame img{border-radius:14px}
+.ip-frame .fcap{text-align:center;font-family:var(--latin);font-weight:600;font-size:14px;color:var(--ink-soft);margin-top:12px}
+.cast{margin-top:30px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px 26px}
+.cast .who{display:flex;gap:12px;align-items:baseline}
+.cast .dot{flex:none;width:13px;height:13px;border-radius:50%;transform:translateY(1px)}
+.cast .who b{font-family:var(--latin);font-weight:700;font-size:16px}
+.cast .who span{color:var(--ink-soft);font-size:13.5px}
+@media (max-width:880px){.ip-grid{grid-template-columns:1fr}}
+
+/* ---------- 體驗 ---------- */
+.sec-exp{background:linear-gradient(180deg,var(--peri-pale),var(--cream))}
+.event-hero{margin-top:56px;display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center;background:linear-gradient(140deg,#26203F,#3A3260);border-radius:32px;padding:46px;color:#fff;box-shadow:0 30px 60px rgba(58,50,96,.35)}
+.event-hero img{border-radius:20px;box-shadow:0 20px 44px rgba(0,0,0,.4)}
+.event-hero .tag{display:inline-block;background:rgba(246,237,216,.15);border:1px solid rgba(246,237,216,.4);color:var(--star);font-size:12.5px;letter-spacing:.26em;padding:6px 16px;border-radius:999px;margin-bottom:18px}
+.event-hero h3{font-weight:900;font-size:clamp(26px,3.4vw,38px);letter-spacing:.1em;line-height:1.5}
+.event-hero .sub{color:rgba(255,255,255,.75);font-size:15px;margin:12px 0 22px}
+.event-hero ul{list-style:none;margin-bottom:26px}
+.event-hero li{padding:7px 0;border-top:1px dashed rgba(255,255,255,.2);font-size:14.5px;display:flex;gap:10px}
+.event-hero li::before{content:"✦";color:var(--pink-soft);font-size:12px}
+.event-hero .price{font-family:var(--latin);font-weight:700;font-size:34px;color:var(--star)}
+.event-hero .price small{font-family:var(--sans);font-weight:400;font-size:13px;color:rgba(255,255,255,.6);margin-left:8px}
+.btn-pink{background:linear-gradient(135deg,var(--pink-soft),var(--pink));color:#fff;box-shadow:0 12px 30px rgba(240,130,150,.4)}
+.btn-pink:hover{transform:translateY(-2px)}
+@media (max-width:880px){.event-hero{grid-template-columns:1fr;padding:30px}}
+.exp-grid{margin-top:26px;display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.exp{background:#fff;border-radius:26px;padding:38px 34px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.exp .exp-img{width:calc(100% + 68px);margin:-38px -34px 24px;border-radius:26px 26px 0 0;aspect-ratio:5/3;object-fit:cover}
+.exp .tag{font-size:12px;letter-spacing:.26em;color:var(--peri-deep);font-weight:700;margin-bottom:12px}
+.exp h3{font-weight:900;font-size:22px;letter-spacing:.06em}
+.exp .exp-en{font-family:var(--latin);font-weight:600;font-size:14.5px;color:var(--pink);margin:2px 0 14px}
+.exp p{color:var(--ink-soft);font-size:14.5px;flex:1}
+.exp .price{font-family:var(--latin);font-weight:700;font-size:26px;color:var(--peri-dark);margin-top:18px}
+.exp .price small{font-family:var(--sans);font-weight:400;font-size:12.5px;color:var(--ink-soft);margin-left:6px}
+@media (max-width:760px){.exp-grid{grid-template-columns:1fr}}
+
+/* ---------- 測驗 ---------- */
+.sec-quiz{background:linear-gradient(175deg,#9593E0,#8B88D8);color:#fff;position:relative;overflow:hidden}
+.quiz-grid{display:grid;grid-template-columns:1fr .9fr;gap:52px;align-items:center}
+.quiz-shots{position:relative;display:flex;justify-content:center}
+.quiz-shots .phone{width:min(300px,60vw);border-radius:30px;box-shadow:0 30px 60px rgba(42,38,84,.45);transform:rotate(-3deg)}
+.quiz-shots .card{position:absolute;width:min(300px,52vw);right:-4%;bottom:-9%;border-radius:22px;box-shadow:0 24px 50px rgba(42,38,84,.5);transform:rotate(4deg)}
+.sec-quiz h2{font-weight:900;font-size:clamp(26px,3.8vw,40px);letter-spacing:.07em;line-height:1.6;margin:16px 0 14px}
+.sec-quiz p{color:rgba(255,255,255,.85);max-width:480px;font-size:15.5px;margin-bottom:32px}
+.sec-quiz .eyebrow{color:var(--star)}
+@media (max-width:880px){.quiz-grid{grid-template-columns:1fr;gap:70px}}
+
+/* ---------- Footer ---------- */
+footer{background:var(--peri-dark);color:rgba(255,255,255,.85);padding:64px 0 40px;font-size:14px}
+.foot-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
+.foot-brand{display:flex;gap:16px;align-items:center}
+.foot-brand img{width:64px;height:64px;border-radius:16px}
+.foot-brand .name{font-family:var(--latin);font-weight:700;font-size:24px;color:#fff}
+.foot-brand .line{font-size:13px;color:rgba(255,255,255,.7)}
+.foot-en{font-family:var(--latin);font-weight:600;font-size:13px;color:var(--star);letter-spacing:.06em}
+.foot-links{display:flex;gap:56px;flex-wrap:wrap}
+.foot-links h4{font-size:12.5px;letter-spacing:.28em;color:var(--star);font-weight:700;margin-bottom:14px}
+.foot-links ul{list-style:none}
+.foot-links li{padding:4px 0}
+.foot-links a:hover{color:#fff;text-decoration:underline}
+.copyright{margin-top:48px;padding-top:22px;border-top:1px solid rgba(255,255,255,.2);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:rgba(255,255,255,.55)}
+</style>
+</head>
+<body>
+
+<nav aria-label="主導覽">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#top"><img src="assets/logo.png" alt="hey soulmate logo"><span class="name">hey soulmate</span></a>
+    <div class="nav-links">
+      <a href="#voices">心聲</a>
+      <a href="#lens">方法</a>
+      <a href="#ip">公仔</a>
+      <a href="#experience">活動</a>
+      <a class="nav-cta" href="#quiz">靈魂測驗</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="stars" aria-hidden="true">
+    <span style="top:12%;left:8%;font-size:16px">✦</span>
+    <span style="top:22%;left:88%;font-size:20px;animation-delay:.8s">✦</span>
+    <span style="top:8%;left:55%;font-size:12px;animation-delay:1.6s">✦</span>
+    <span style="top:48%;left:5%;font-size:12px;animation-delay:2.2s">✦</span>
+    <span style="top:38%;left:94%;font-size:14px;animation-delay:.4s">✦</span>
+    <span style="top:70%;left:12%;font-size:18px;animation-delay:1.2s">✦</span>
+    <span style="top:78%;left:90%;font-size:13px;animation-delay:2.6s">✦</span>
+  </div>
+  <div class="wrap hero-grid">
+    <div>
+      <img class="hero-logo" src="assets/logo.png" alt="hey soulmate">
+      <h1>在還未遇到對的人之前，<br>先看懂自己。</h1>
+      <p class="hero-sub">我哋用心理學、MBTI 同愛之語，陪你喺三十歲前後嘅香港，慢慢搞清楚自己想要點樣嘅愛情——然後，有底氣咁去遇見。</p>
+      <p class="hero-en">Soulful connections, beyond appearances ✦</p>
+      <div class="hero-ctas">
+        <a class="btn btn-white" href="#quiz">開始靈魂測驗</a>
+        <a class="btn btn-line" href="#experience">睇下最近活動</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="assets/hero-spirits.png" alt="兩隻小精靈喺星空雲海上，一齊捧住一顆發光嘅粉紅心">
+    </div>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,75 480,5 720,30 C960,55 1200,20 1440,45 L1440,70 L0,70 Z" fill="#FBF7EF"/></svg>
+</header>
+
+<section class="sec" id="voices">
+  <div class="wrap">
+    <p class="eyebrow">單身心聲</p>
+    <h2 class="sec-title">喺香港談戀愛，你可能都試過——</h2>
+    <p class="sec-lead">呢啲唔係你一個人嘅感覺。以下每一句，都嚟自同你差唔多年紀、差唔多處境嘅香港人。</p>
+
+    <div class="confessions">
+      <article class="confession">
+        <span class="qmark" aria-hidden="true">”</span>
+        <h3>放工之後，得返自己。</h3>
+        <p>工作佔咗生活大半，社交圈越嚟越細。唔係唔想識新朋友，係真係冇位——同事以外，連遇見嘅場合都冇。</p>
+      </article>
+      <article class="confession">
+        <span class="qmark" aria-hidden="true">”</span>
+        <h3>App 上面好熱鬧，心入面好安靜。</h3>
+        <p>Swipe 咗幾百次，對話永遠停留喺「食咗飯未」。你想要嘅係深度，唔係數量。</p>
+      </article>
+      <article class="confession">
+        <span class="qmark" aria-hidden="true">”</span>
+        <h3>明明唔差，但每次都差一步。</h3>
+        <p>每段關係都喺差唔多嘅位置完結。你開始懷疑：係揀錯人，定係你根本唔知自己喺關係入面係一個點樣嘅人？</p>
+      </article>
+      <article class="confession">
+        <span class="qmark" aria-hidden="true">”</span>
+        <h3>想認真，但怕再受傷。</h3>
+        <p>上一次全心投入嘅結果，令你而家凡事留三分。唔知點樣先可以再次安心咁打開自己。</p>
+      </article>
+      <article class="confession wide">
+        <span class="qmark" aria-hidden="true">”</span>
+        <h3>飲宴請帖一封一封咁嚟。</h3>
+        <p>身邊人一個個結婚，連屋企人都開始「關心」。你唔想將就，但都唔想一直咁等落去——你等緊嘅，其實係一個對嘅方法。</p>
+      </article>
+    </div>
+
+    <p class="confess-outro">呢啲感覺，心理學其實一早有答案。<br>問題唔係你唔夠好——係<span class="pink">從來冇人教過我哋，點樣了解自己。</span></p>
+  </div>
+</section>
+
+<section class="sec sec-lens" id="lens">
+  <div class="wrap">
+    <p class="eyebrow">我哋嘅方法</p>
+    <h2 class="sec-title">四塊鏡片，睇清一段關係</h2>
+    <p class="sec-lead">hey soulmate 唔靠運氣配對。我哋用四套經得起驗證嘅知識體系，先幫你讀懂自己，再學識讀懂另一個人。</p>
+
+    <div class="lens-grid">
+      <article class="lens">
+        <div class="glyph" style="background:var(--peri-pale)">🧠</div>
+        <p class="en-label">MBTI · 16 Personalities</p>
+        <h3>你點樣諗嘢、做決定</h3>
+        <p>同一件事，點解你哋反應可以差咁遠？由性格底層理解自己嘅思考同決策模式。</p>
+      </article>
+      <article class="lens">
+        <div class="glyph" style="background:#FDEEF1">🫂</div>
+        <p class="en-label">Attachment · 依附理論</p>
+        <h3>你喺親密關係嘅安全感</h3>
+        <p>焦慮定迴避？點解越在乎越想逃？你嘅反應早有劇本——而劇本係可以改寫嘅。</p>
+      </article>
+      <article class="lens">
+        <div class="glyph" style="background:#FBF3E2">💬</div>
+        <p class="en-label">Love Languages · 愛之語</p>
+        <h3>你表達愛嘅方式</h3>
+        <p>你送禮物，佢想要陪伴。好多關係唔係冇愛，係大家講緊唔同嘅語言。</p>
+      </article>
+      <article class="lens">
+        <div class="glyph" style="background:var(--peri-pale)">🌏</div>
+        <p class="en-label">Anthropology · 人類學</p>
+        <h3>人類點解咁樣戀愛</h3>
+        <p>由求偶儀式到 dating app，擇偶行為背後有幾十萬年演化邏輯。睇得遠啲，會對自己寬容啲。</p>
+      </article>
+    </div>
+
+    <div class="works">
+      <figure class="work">
+        <img src="assets/post-love-languages.png" alt="hey soulmate IG post：愛的 5 種語言系列，小精靈公仔示範每種愛之語">
+        <figcaption class="cap">小教室系列 · 愛的 5 種語言</figcaption>
+      </figure>
+      <figure class="work">
+        <img src="assets/mbti-main.png" alt="16 型人格 MBTI 角色圖鑑">
+        <figcaption class="cap">MBTI 角色圖鑑</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-ip" id="ip">
+  <div class="wrap ip-grid">
+    <div class="ip-frame">
+      <img src="assets/ip-sheet.png" alt="hey soulmate 公仔設定集：Soul、Mask、Insight、Feel、Bond、Persona 六隻粉彩小精靈">
+      <p class="fcap">hey soulmate character sheet ✦ N°1</p>
+    </div>
+    <div>
+      <p class="eyebrow">我哋嘅公仔</p>
+      <h2 class="sec-title">六隻小精靈，<br>住喺每個人心入面</h2>
+      <p class="sec-lead">佢哋唔係六個角色，係你喺一段關係入面嘅六個面向。</p>
+      <div class="cast">
+        <p class="who"><span class="dot" style="background:#B9B6EC"></span><span><b>Soul 靈魂本體</b><br><span>純粹真實嘅你——好奇、溫柔、渴望被理解</span></span></p>
+        <p class="who"><span class="dot" style="background:#F7B8C4"></span><span><b>Mask 面具</b><br><span>我哋戴上嘅面具，保護自己、塑造形象</span></span></p>
+        <p class="who"><span class="dot" style="background:#9ED3C5"></span><span><b>Insight 理性腦</b><br><span>分析同觀察，幫你理解自己與關係</span></span></p>
+        <p class="who"><span class="dot" style="background:#F49BAB"></span><span><b>Feel 情感體</b><br><span>感性、直覺、感受愛——都需要被愛</span></span></p>
+        <p class="who"><span class="dot" style="background:#F0C987"></span><span><b>Bond 連結</b><br><span>連結嘅象徵，令兩個靈魂靠近</span></span></p>
+        <p class="who"><span class="dot" style="background:#5B5680"></span><span><b>Persona 人格系列</b><br><span>每種 MBTI 都有自己獨特嘅靈魂形態</span></span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-exp" id="experience">
+  <div class="wrap">
+    <p class="eyebrow">由了解，到遇見</p>
+    <h2 class="sec-title">最近活動</h2>
+    <p class="sec-lead">無論你想先安靜咁了解自己，定係已經準備好去認識新嘅人，都有一個位留畀你。</p>
+
+    <div class="event-hero">
+      <img src="assets/soul-night-poster.png" alt="靈魂之夜活動海報：廣東歌＋愛情五味，維港夜景晚宴">
+      <div>
+        <span class="tag">FEATURED · 7 月 10 日</span>
+        <h3>靈魂之夜</h3>
+        <p class="sub">廣東歌 ＋ 愛情五味 —— 喺歌聲同情感之間，感受愛嘅五種滋味。</p>
+        <ul>
+          <li>經典廣東歌 × 深度對話時光</li>
+          <li>銅鑼灣海景私房晚宴 · 浪漫留影時刻</li>
+          <li>2026.7.10（五）19:00 – 22:30 · 情侶、朋友、自組二人</li>
+        </ul>
+        <p class="price">HK$880<small>／位 · 連晚宴</small></p>
+        <div style="margin-top:20px"><a class="btn btn-pink" href="https://www.instagram.com/heysoulmate.hk" target="_blank" rel="noopener">立即報名</a></div>
+      </div>
+    </div>
+
+    <div class="exp-grid">
+      <article class="exp">
+        <img class="exp-img" src="assets/card-workshop.png" alt="小精靈喺暖燈下寫緊 journal，旁邊有一杯茶">
+        <p class="tag">了解自己</p>
+        <h3>自我了解工作坊</h3>
+        <p class="exp-en">Know Thyself Workshop</p>
+        <p>半日小組工作坊，用 MBTI 同依附理論拆解你嘅愛情模式。唔使識人，唔使配對——呢一步，純粹屬於你自己。</p>
+        <p class="price">HK$480<small>／位</small></p>
+      </article>
+      <article class="exp">
+        <img class="exp-img" src="assets/card-consult.png" alt="兩隻小精靈坐喺軟墊上傾心事，細隻嗰隻講緊心入面嘅愛">
+        <p class="tag">個人陪伴</p>
+        <h3>一對一戀愛心理陪伴</h3>
+        <p class="exp-en">Private Consultation</p>
+        <p>關係入面有啲位，唔適合喺人前講。50 分鐘私密對話，拆解你嘅關係卡點——由曖昧、拍拖到分手後重建。</p>
+        <p class="price">HK$880<small>／節</small></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-quiz" id="quiz">
+  <div class="stars" aria-hidden="true">
+    <span style="top:10%;left:6%;font-size:16px">✦</span>
+    <span style="top:16%;left:92%;font-size:13px;animation-delay:1s">✦</span>
+    <span style="top:82%;left:8%;font-size:12px;animation-delay:2s">✦</span>
+    <span style="top:70%;left:94%;font-size:17px;animation-delay:.5s">✦</span>
+  </div>
+  <div class="wrap quiz-grid">
+    <div class="quiz-shots">
+      <img class="phone" src="assets/quiz-phone.png" alt="靈魂測驗手機畫面：第 10 題，兩隻小精靈喺月光下睇路牌">
+      <img class="card" src="assets/quiz-2.png" alt="靈魂測驗題目：太空冒險情境題">
+    </div>
+    <div>
+      <p class="eyebrow">踏出第一步</p>
+      <h2>12 條問題，<br>解鎖你嘅靈魂解析</h2>
+      <p>免費靈魂測驗——由太空冒險到旅途抉擇，每條情境題背後都係一個心理學維度。三分鐘後，你會多咗一個認識自己嘅角度。</p>
+      <a class="btn btn-white" href="https://www.instagram.com/heysoulmate.hk" target="_blank" rel="noopener">DM 我哋開始測驗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.png" alt="hey soulmate logo">
+          <div>
+            <p class="name">hey soulmate</p>
+            <p class="line">靈魂交友，從懂你開始</p>
+          </div>
+        </div>
+        <p class="foot-en" style="margin-top:16px">Soulful connections, beyond appearances ✦</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <h4>探索</h4>
+          <ul>
+            <li><a href="#voices">單身心聲</a></li>
+            <li><a href="#lens">我哋嘅方法</a></li>
+            <li><a href="#ip">公仔</a></li>
+            <li><a href="#experience">活動</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>聯絡</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/heysoulmate.hk" target="_blank" rel="noopener">Instagram @heysoulmate.hk</a></li>
+            <li><a href="mailto:hello@heysoulmate.hk">hello@heysoulmate.hk</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2026 hey soulmate. All rights reserved.</p>
+      <p>Made with ♥ in Hong Kong</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
