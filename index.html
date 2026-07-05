@@ -51,7 +51,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(16px);-w
 .nav-links a:hover{color:var(--peri-deep)}
 .nav-cta{background:var(--peri);color:#fff!important;padding:9px 22px;border-radius:999px;font-weight:700;box-shadow:0 6px 18px rgba(139,136,216,.35);transition:transform .25s,background .25s}
 .nav-cta:hover{background:var(--peri-deep);transform:translateY(-1px)}
-@media (max-width:800px){.nav-links a:not(.nav-cta){display:none}}
+.nav-drop{position:relative}
+.nav-drop-btn{font-family:inherit;font-size:14.5px;font-weight:500;color:var(--ink);background:none;border:0;cursor:pointer;display:flex;align-items:center;gap:5px;padding:0}
+.nav-drop-btn .car{transition:transform .25s;font-size:10px;color:var(--peri-deep)}
+.nav-drop:hover .nav-drop-btn,.nav-drop:focus-within .nav-drop-btn{color:var(--peri-deep)}
+.nav-drop:hover .car,.nav-drop:focus-within .car{transform:rotate(180deg)}
+.nav-drop-menu{position:absolute;top:calc(100% + 16px);right:0;background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:8px;min-width:210px;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s,transform .25s,visibility .25s;border:1px solid rgba(168,166,226,.2)}
+.nav-drop-menu::before{content:"";position:absolute;top:-16px;left:0;right:0;height:16px}
+.nav-drop:hover .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-drop-menu a{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:11px;font-size:14px;font-weight:500;color:var(--ink)}
+.nav-drop-menu a small{display:block;font-size:11.5px;color:var(--ink-soft);font-weight:400;margin-top:1px}
+.nav-drop-menu a:hover{background:var(--peri-pale);color:var(--peri-dark)}
+.nav-drop-menu .mdot{flex:none;width:9px;height:9px;border-radius:50%;background:var(--peri)}
+@media (max-width:800px){.nav-links a:not(.nav-cta){display:none}.nav-drop-menu{right:-40px}}
 
 /* ---------- Hero ---------- */
 header.hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(175deg,#B7B5EC 0%,#A8A6E2 55%,#9593E0 100%);padding:150px 0 0}
@@ -223,6 +235,64 @@ footer{background:var(--peri-dark);color:rgba(255,255,255,.85);padding:64px 0 40
   <svg class="hero-wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,75 480,5 720,30 C960,55 1200,20 1440,45 L1440,70 L0,70 Z" fill="#FBF7EF"/></svg>
 </header>
 
+<section class="sec sec-exp" id="experience">
+  <div class="wrap">
+    <p class="eyebrow">由了解，到遇見</p>
+    <h2 class="sec-title">最近活動</h2>
+    <p class="sec-lead">無論你想先安靜咁了解自己，定係已經準備好去認識新嘅人，都有一個位留畀你。</p>
+
+    <div class="event-hero">
+      <img src="assets/masked-poster-gold.jpg" alt="一場蒙面約會，一次深度交流：100 人蒙面約會活動海報，佐敦逸東酒店 EATON HK">
+      <div>
+        <span class="tag">精彩回顧 · 2026.5.24</span>
+        <h3>100 人蒙面約會</h3>
+        <p class="sub">一場蒙面約會，一次深度交流——蒙上面具，卸下標籤，喺安全嘅空間裡，遇見真誠嘅靈魂。</p>
+        <ul>
+          <li>佐敦逸東酒店 EATON HK · 100 位參加者</li>
+          <li>蒙面遊戲 × 深度交流 × 找到共鳴</li>
+          <li>圓滿結束 · 多謝每一個真誠嘅你</li>
+        </ul>
+        <p class="price">100 人<small>滿座完場 ✦</small></p>
+        <div style="margin-top:20px"><a class="btn btn-pink" href="https://www.instagram.com/heysoulmate.hk" target="_blank" rel="noopener">去 IG 睇精彩回顧</a></div>
+      </div>
+    </div>
+
+    <div class="recap-grid">
+      <img src="assets/recap-1.png" alt="回顧：蒙面小精靈喺酒店宴會廳開心咁交流">
+      <img src="assets/recap-2.png" alt="回顧：兩隻蒙面小精靈喺燭光下深度對話">
+      <img src="assets/recap-3.png" alt="回顧：一班蒙面小精靈圍埋玩對話卡遊戲">
+    </div>
+
+    <div class="next-event">
+      <span class="ne-tag">下一場 ✦</span>
+      <div class="ne-info">
+        <b>微醺之夜</b> — 一杯微醺，一場靈魂交流 · 日期・地點稍後公布
+      </div>
+      <a class="btn btn-pink" href="https://www.instagram.com/heysoulmate.hk" target="_blank" rel="noopener">立即報名</a>
+    </div>
+
+    <div class="exp-grid">
+      <article class="exp">
+        <img class="exp-img" src="assets/card-workshop.png" alt="小精靈喺暖燈下寫緊 journal，旁邊有一杯茶">
+        <p class="tag">了解自己</p>
+        <h3>自我了解工作坊</h3>
+        <p class="exp-en">Know Thyself Workshop</p>
+        <p>半日小組工作坊，用 MBTI 同依附理論拆解你嘅愛情模式。唔使識人，唔使配對——呢一步，純粹屬於你自己。</p>
+        <p class="price">HK$480<small>／位</small></p>
+      </article>
+      <article class="exp">
+        <img class="exp-img" src="assets/card-consult.png" alt="兩隻小精靈坐喺軟墊上傾心事，細隻嗰隻講緊心入面嘅愛">
+        <p class="tag">個人陪伴</p>
+        <h3>一對一戀愛心理陪伴</h3>
+        <p class="exp-en">Private Consultation</p>
+        <p>關係入面有啲位，唔適合喺人前講。50 分鐘私密對話，拆解你嘅關係卡點——由曖昧、拍拖到分手後重建。</p>
+        <p class="price">HK$880<small>／節</small></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
 <section class="sec" id="voices">
   <div class="wrap">
     <p class="eyebrow">單身心聲</p>
@@ -328,64 +398,6 @@ footer{background:var(--peri-dark);color:rgba(255,255,255,.85);padding:64px 0 40
     </div>
   </div>
 </section>
-
-<section class="sec sec-exp" id="experience">
-  <div class="wrap">
-    <p class="eyebrow">由了解，到遇見</p>
-    <h2 class="sec-title">最近活動</h2>
-    <p class="sec-lead">無論你想先安靜咁了解自己，定係已經準備好去認識新嘅人，都有一個位留畀你。</p>
-
-    <div class="event-hero">
-      <img src="assets/masked-poster-gold.jpg" alt="一場蒙面約會，一次深度交流：100 人蒙面約會活動海報，佐敦逸東酒店 EATON HK">
-      <div>
-        <span class="tag">精彩回顧 · 2026.5.24</span>
-        <h3>100 人蒙面約會</h3>
-        <p class="sub">一場蒙面約會，一次深度交流——蒙上面具，卸下標籤，喺安全嘅空間裡，遇見真誠嘅靈魂。</p>
-        <ul>
-          <li>佐敦逸東酒店 EATON HK · 100 位參加者</li>
-          <li>蒙面遊戲 × 深度交流 × 找到共鳴</li>
-          <li>圓滿結束 · 多謝每一個真誠嘅你</li>
-        </ul>
-        <p class="price">100 人<small>滿座完場 ✦</small></p>
-        <div style="margin-top:20px"><a class="btn btn-pink" href="https://www.instagram.com/heysoulmate.hk" target="_blank" rel="noopener">去 IG 睇精彩回顧</a></div>
-      </div>
-    </div>
-
-    <div class="recap-grid">
-      <img src="assets/recap-1.png" alt="回顧：蒙面小精靈喺酒店宴會廳開心咁交流">
-      <img src="assets/recap-2.png" alt="回顧：兩隻蒙面小精靈喺燭光下深度對話">
-      <img src="assets/recap-3.png" alt="回顧：一班蒙面小精靈圍埋玩對話卡遊戲">
-    </div>
-
-    <div class="next-event">
-      <span class="ne-tag">下一場 ✦</span>
-      <div class="ne-info">
-        <b>微醺之夜</b> — 一杯微醺，一場靈魂交流 · 日期・地點稍後公布
-      </div>
-      <a class="btn btn-pink" href="https://www.instagram.com/heysoulmate.hk" target="_blank" rel="noopener">立即報名</a>
-    </div>
-
-    <div class="exp-grid">
-      <article class="exp">
-        <img class="exp-img" src="assets/card-workshop.png" alt="小精靈喺暖燈下寫緊 journal，旁邊有一杯茶">
-        <p class="tag">了解自己</p>
-        <h3>自我了解工作坊</h3>
-        <p class="exp-en">Know Thyself Workshop</p>
-        <p>半日小組工作坊，用 MBTI 同依附理論拆解你嘅愛情模式。唔使識人，唔使配對——呢一步，純粹屬於你自己。</p>
-        <p class="price">HK$480<small>／位</small></p>
-      </article>
-      <article class="exp">
-        <img class="exp-img" src="assets/card-consult.png" alt="兩隻小精靈坐喺軟墊上傾心事，細隻嗰隻講緊心入面嘅愛">
-        <p class="tag">個人陪伴</p>
-        <h3>一對一戀愛心理陪伴</h3>
-        <p class="exp-en">Private Consultation</p>
-        <p>關係入面有啲位，唔適合喺人前講。50 分鐘私密對話，拆解你嘅關係卡點——由曖昧、拍拖到分手後重建。</p>
-        <p class="price">HK$880<small>／節</small></p>
-      </article>
-    </div>
-  </div>
-</section>
-
 <section class="sec sec-quiz" id="quiz">
   <div class="stars" aria-hidden="true">
     <span style="top:10%;left:6%;font-size:16px">✦</span>
