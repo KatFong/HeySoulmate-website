@@ -27,7 +27,7 @@
   --shadow:0 18px 44px rgba(107,103,184,.16);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:130px}
 body{font-family:var(--sans);font-weight:400;color:var(--ink);background:var(--cream);line-height:1.9;letter-spacing:.02em}
 img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
@@ -41,8 +41,21 @@ h2.sec-title{font-weight:900;font-size:clamp(27px,4vw,42px);line-height:1.5;lett
 .en{font-family:var(--latin);letter-spacing:.01em}
 .sec{padding:104px 0}
 
+/* ---------- 活動走馬燈 ---------- */
+.ticker{position:fixed;top:0;left:0;right:0;z-index:60;height:38px;background:var(--ink);overflow:hidden;display:flex;align-items:center}
+.ticker-track{display:flex;flex:none;gap:0;white-space:nowrap;animation:tick 36s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker a{flex:none;display:inline-flex;align-items:center;gap:9px;padding:0 30px;font-size:13px;letter-spacing:.08em;color:var(--star);font-weight:500}
+.ticker a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.ticker .tdot{width:7px;height:7px;border-radius:50%;flex:none}
+.ticker .t-soon{background:#F0C987}
+.ticker .t-open{background:#9ED3C5}
+.ticker .t-past{background:var(--peri-light)}
+@keyframes tick{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@media (prefers-reduced-motion:reduce){.ticker-track{animation:none}}
+
 /* ---------- Nav ---------- */
-nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);background:rgba(251,247,239,.8);border-bottom:1px solid rgba(168,166,226,.25)}
+nav{position:fixed;top:38px;left:0;right:0;z-index:50;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);background:rgba(251,247,239,.8);border-bottom:1px solid rgba(168,166,226,.25)}
 .nav-inner{max-width:1120px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo img{height:46px;width:46px;border-radius:12px}
 .nav-logo{display:flex;align-items:center;gap:12px}
@@ -63,10 +76,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(16px);-w
 .nav-drop-menu a small{display:block;font-size:11.5px;color:var(--ink-soft);font-weight:400;margin-top:1px}
 .nav-drop-menu a:hover{background:var(--peri-pale);color:var(--peri-dark)}
 .nav-drop-menu .mdot{flex:none;width:9px;height:9px;border-radius:50%;background:var(--peri)}
-@media (max-width:800px){.nav-links a:not(.nav-cta){display:none}.nav-drop-menu{right:-40px}}
+@media (max-width:800px){.nav-links a:not(.nav-cta){display:none}.nav-drop{display:none}}
 
 /* ---------- Hero ---------- */
-header.hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(175deg,#B7B5EC 0%,#A8A6E2 55%,#9593E0 100%);padding:150px 0 0}
+header.hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(175deg,#B7B5EC 0%,#A8A6E2 55%,#9593E0 100%);padding:188px 0 0}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-bottom:110px}
 .hero-logo{width:min(360px,70vw);filter:drop-shadow(0 24px 40px rgba(74,70,128,.28));border-radius:32px;margin-bottom:34px}
 .hero h1{font-weight:900;font-size:clamp(30px,4.6vw,50px);line-height:1.55;letter-spacing:.06em;margin-bottom:16px;white-space:nowrap}
@@ -85,7 +98,7 @@ header.hero{position:relative;overflow:hidden;color:#fff;background:linear-gradi
 .stars span{position:absolute;color:var(--star);animation:twinkle 3.4s ease-in-out infinite}
 @keyframes twinkle{0%,100%{opacity:.35;transform:scale(.85)}50%{opacity:1;transform:scale(1.1)}}
 .hero-wave{display:block;width:100%;margin-top:-2px}
-@media (max-width:880px){.hero-grid{grid-template-columns:1fr;gap:56px}.hero{padding-top:120px}}
+@media (max-width:880px){.hero-grid{grid-template-columns:1fr;gap:56px}.hero{padding-top:158px}}
 @media (max-width:560px){.hero-logo{width:min(190px,50vw);border-radius:26px;margin-bottom:26px}.hero h1{font-size:clamp(21px,6.4vw,30px);letter-spacing:.04em}}
 @media (prefers-reduced-motion:reduce){.stars span{animation:none}html{scroll-behavior:auto}}
 
@@ -106,6 +119,8 @@ header.hero{position:relative;overflow:hidden;color:#fff;background:linear-gradi
 .lens{background:#fff;border-radius:24px;padding:34px 26px;box-shadow:var(--shadow);transition:transform .3s}
 .lens:hover{transform:translateY(-6px)}
 .lens .glyph{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px}
+.lens .glyph-ip{width:68px;height:68px;object-fit:contain;margin-bottom:16px;transition:transform .3s}
+.lens:hover .glyph-ip{transform:translateY(-4px) rotate(-3deg)}
 .lens .en-label{font-family:var(--latin);font-weight:600;font-size:13.5px;color:var(--peri-deep);letter-spacing:.04em}
 .lens h3{font-weight:900;font-size:18.5px;letter-spacing:.05em;margin:4px 0 10px}
 .lens p{color:var(--ink-soft);font-size:14px;line-height:1.85}
@@ -194,6 +209,19 @@ footer{background:var(--peri-dark);color:rgba(255,255,255,.85);padding:64px 0 40
 </head>
 <body>
 
+<div class="ticker" aria-label="活動快訊">
+  <div class="ticker-track">
+    <a href="#experience"><span class="tdot t-soon"></span>下一場 ✦ 微醺之夜 — 一杯微醺，一場靈魂交流 · 日期地點稍後公布</a>
+    <a href="events/masked-dating.html"><span class="tdot t-past"></span>精彩回顧 ✦ 100人蒙面約會 · 佐敦逸東酒店 · 滿座完場</a>
+    <a href="https://heysoulmate-quiz.zeabur.app/" target="_blank" rel="noopener"><span class="tdot t-open"></span>免費 ✦ 靈魂測驗 · 3 分鐘解鎖你嘅靈魂解析</a>
+    <a href="#experience"><span class="tdot t-open"></span>報名中 ✦ 自我了解工作坊 HK$480 · 一對一戀愛心理陪伴 HK$880</a>
+    <a href="#experience"><span class="tdot t-soon"></span>下一場 ✦ 微醺之夜 — 一杯微醺，一場靈魂交流 · 日期地點稍後公布</a>
+    <a href="events/masked-dating.html"><span class="tdot t-past"></span>精彩回顧 ✦ 100人蒙面約會 · 佐敦逸東酒店 · 滿座完場</a>
+    <a href="https://heysoulmate-quiz.zeabur.app/" target="_blank" rel="noopener"><span class="tdot t-open"></span>免費 ✦ 靈魂測驗 · 3 分鐘解鎖你嘅靈魂解析</a>
+    <a href="#experience"><span class="tdot t-open"></span>報名中 ✦ 自我了解工作坊 HK$480 · 一對一戀愛心理陪伴 HK$880</a>
+  </div>
+</div>
+
 <nav aria-label="主導覽">
   <div class="nav-inner">
     <a class="nav-logo" href="#top"><img src="assets/logo-clean.png" alt="hey soulmate logo"><span class="name">hey soulmate</span></a>
@@ -202,6 +230,12 @@ footer{background:var(--peri-dark);color:rgba(255,255,255,.85);padding:64px 0 40
       <a href="#lens">方法</a>
       <a href="#ip">公仔</a>
       <a href="#experience">活動</a>
+      <div class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-haspopup="true">過往活動 <span class="car">▼</span></button>
+        <div class="nav-drop-menu">
+          <a href="events/masked-dating.html"><span class="mdot"></span><span>100人蒙面約會<small>2026.5.24 · 佐敦逸東酒店</small></span></a>
+        </div>
+      </div>
       <a class="nav-cta" href="#quiz">靈魂測驗</a>
     </div>
   </div>
@@ -232,7 +266,7 @@ footer{background:var(--peri-dark);color:rgba(255,255,255,.85);padding:64px 0 40
       <img src="assets/hero-spirits.png" alt="兩隻小精靈喺星空雲海上，一齊捧住一顆發光嘅粉紅心">
     </div>
   </div>
-  <svg class="hero-wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,75 480,5 720,30 C960,55 1200,20 1440,45 L1440,70 L0,70 Z" fill="#FBF7EF"/></svg>
+  <svg class="hero-wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,75 480,5 720,30 C960,55 1200,20 1440,45 L1440,70 L0,70 Z" fill="#EEEDFA"/></svg>
 </header>
 
 <section class="sec sec-exp" id="experience">
@@ -339,25 +373,25 @@ footer{background:var(--peri-dark);color:rgba(255,255,255,.85);padding:64px 0 40
 
     <div class="lens-grid">
       <article class="lens">
-        <div class="glyph" style="background:var(--peri-pale)">🧠</div>
+        <img class="glyph-ip" src="assets/icon-persona.png" alt="Persona 人格系列小精靈">
         <p class="en-label">MBTI · 16 Personalities</p>
         <h3>你點樣諗嘢、做決定</h3>
         <p>同一件事，點解你哋反應可以差咁遠？由性格底層理解自己嘅思考同決策模式。</p>
       </article>
       <article class="lens">
-        <div class="glyph" style="background:#FDEEF1">🫂</div>
+        <img class="glyph-ip" src="assets/icon-bond.png" alt="Bond 連結小精靈：紅線牽住兩隻精靈">
         <p class="en-label">Attachment · 依附理論</p>
         <h3>你喺親密關係嘅安全感</h3>
         <p>焦慮定迴避？點解越在乎越想逃？你嘅反應早有劇本——而劇本係可以改寫嘅。</p>
       </article>
       <article class="lens">
-        <div class="glyph" style="background:#FBF3E2">💬</div>
+        <img class="glyph-ip" src="assets/icon-feel.png" alt="Feel 情感體小精靈攬住心心">
         <p class="en-label">Love Languages · 愛之語</p>
         <h3>你表達愛嘅方式</h3>
         <p>你送禮物，佢想要陪伴。好多關係唔係冇愛，係大家講緊唔同嘅語言。</p>
       </article>
       <article class="lens">
-        <div class="glyph" style="background:var(--peri-pale)">🌏</div>
+        <img class="glyph-ip" src="assets/icon-insight.png" alt="Insight 理性腦小精靈戴眼鏡睇書">
         <p class="en-label">Anthropology · 人類學</p>
         <h3>人類點解咁樣戀愛</h3>
         <p>由求偶儀式到 dating app，擇偶行為背後有幾十萬年演化邏輯。睇得遠啲，會對自己寬容啲。</p>
